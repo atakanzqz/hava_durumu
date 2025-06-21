@@ -1,3 +1,5 @@
+import 'dart:developer' as console show log;
+
 import 'package:flutter/material.dart';
 import 'package:hava_durumu/models/weather_model.dart';
 import 'package:hava_durumu/services/weather_services.dart';
@@ -23,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       _weathers = await WeatherServices().getWeatherData();
     } catch (e) {
-      print("Hava verisi alınamadı: $e");
+      console.log("Hava verisi alınamadı: $e");
     } finally {
       setState(() {
         _isLoading = false;
